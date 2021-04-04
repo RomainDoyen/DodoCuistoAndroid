@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "877530927377",
+    "project_id": "dodocuisto-8df32",
+    "storage_bucket": "dodocuisto-8df32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877530927377:android:faf0fdb86621e125f2fcb0",
+        "android_client_info": {
+          "package_name": "com.example.dodocuisto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877530927377-pmsj8b0cvelvra418db0i9no1advbqs0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGd-58Jqp2Ecg3AMvj1apDCovjr5GUhjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877530927377-pmsj8b0cvelvra418db0i9no1advbqs0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
