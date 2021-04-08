@@ -1,16 +1,16 @@
-package com.example.dodocuisto.ui.home;
+package com.example.dodocuisto.ui.signin;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class SigninViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public SigninViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is signin fragment");
     }
 
     public LiveData<String> getText() {
