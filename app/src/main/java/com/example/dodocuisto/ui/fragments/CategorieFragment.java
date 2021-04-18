@@ -105,7 +105,7 @@ public abstract class CategorieFragment extends Fragment {
         recipes = databaseAdapter.getAllRecipesByCategory(currentCategory);
         toggleEmptyView();
         recipeAdapter = new RecetteController(getActivity(), recipes);
-        recipeAdapter.setRecipeListener(new RecetteController().RecipeListener() {
+        recipeAdapter.setRecipeListener(new RecetteController.RecipeListener() {
             @Override
             public void onShowRecipe(Recette recipe, Pair<View, String>[] pairs) {
                 categorizedFragmentListener.onShowRecipe(recipe, pairs);

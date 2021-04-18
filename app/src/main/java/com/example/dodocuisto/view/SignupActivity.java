@@ -3,7 +3,7 @@ package com.example.dodocuisto.view;
 import android.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
+import com.google.android.material.textfield.TextInputLayout;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -11,7 +11,7 @@ import com.example.dodocuisto.R;
 import com.example.dodocuisto.controller.DatabaseController;
 import com.example.dodocuisto.modele.User;
 
-public class SignupActivity implements ToolbarActivity {
+public class SignupActivity extends ToolbarActivity {
     private DatabaseController databaseAdapter;
 
     private TextInputLayout mUsername;

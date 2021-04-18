@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
@@ -17,15 +17,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.elmargomez.typer.Font;
-import com.elmargomez.typer.Typer;
-
 import java.io.File;
 
 import com.example.dodocuisto.R;
 import com.example.dodocuisto.controller.DatabaseController;
 import com.example.dodocuisto.controller.ViewPagerController;
-import utils.ResultCodes;
+import com.example.dodocuisto.controller.ResultCodes;
 import com.example.dodocuisto.modele.Recette;
 
 public class ViewRecetteActivity extends ToolbarActivity {
@@ -60,11 +57,11 @@ public class ViewRecetteActivity extends ToolbarActivity {
         mRecipeDescription.setText(currentRecipe.getDescription());
 
         mTabLayout.bringToFront();
-        mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), currentRecipe);
+        mAdapter = new ViewPagerController(getSupportFragmentManager(), currentRecipe);
 
-        Typeface font = Typer.set(this).getFont(Font.ROBOTO_MEDIUM);
+        /*Typeface font = setTypeface(TyperRoboto.ROBOTO_REGULAR());
         mCollapsingToolbarLayout.setCollapsedTitleTypeface(font);
-        mCollapsingToolbarLayout.setExpandedTitleTypeface(font);
+        mCollapsingToolbarLayout.setExpandedTitleTypeface(font);*/
 
         mViewPager.setAdapter(mAdapter);
         mTabLayout.setupWithViewPager(mViewPager);

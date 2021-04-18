@@ -136,5 +136,7 @@
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-components:16.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.annotation:annotation-experimental:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.rhexgomez.typer:typer-roboto:2.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.rhexgomez.typer:common:2.0.0@aar" level="project" />
   </component>
 </module>

@@ -13,14 +13,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.core.content.ContextCompat;
-import android.widget.Toolbar;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
 
@@ -33,8 +31,9 @@ import com.example.dodocuisto.ui.fragments.NavigationFragment;
 import com.example.dodocuisto.ui.fragments.RecetteDirectionFragment;
 import com.example.dodocuisto.ui.fragments.RecetteImageFragment;
 import com.example.dodocuisto.ui.fragments.RecetteIngredientFragment;
-import utils.Files;
-import utils.ResultCodes;
+import com.example.dodocuisto.controller.Files;
+import com.example.dodocuisto.controller.ResultCodes;
+
 
 public class CreaRecetteActivity extends AppCompatActivity implements RecetteImageFragment.ImageListener, RecetteDirectionFragment.DirectionsListener, RecetteIngredientFragment.IngredientListener {
     private static final int REQUEST_OPEN_GALLERY = 10;
@@ -93,6 +92,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case REQUEST_OPEN_GALLERY:
                 switch (resultCode) {

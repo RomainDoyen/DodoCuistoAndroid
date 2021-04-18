@@ -2,7 +2,7 @@ package com.example.dodocuisto.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
+import com.google.android.material.textfield.TextInputLayout;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.example.dodocuisto.R;
 import com.example.dodocuisto.controller.DatabaseController;
 
-public class SigninActivity implements ToolbarActivity {
+public class SigninActivity extends ToolbarActivity {
     private TextInputLayout mLoginEmail;
     private TextInputLayout mLoginPassword;
 
@@ -53,6 +53,6 @@ public class SigninActivity implements ToolbarActivity {
     }
 
     public void onCreateAccountPressed(View view) {
-        startActivity(new Intent(this, RegisterActivity.class));
+        startActivity(new Intent(this, SignupActivity.class));
     }
 }
