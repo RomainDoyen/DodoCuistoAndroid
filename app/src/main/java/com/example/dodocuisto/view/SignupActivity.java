@@ -7,12 +7,12 @@ import android.support.design.widget.TextInputLayout;
 import android.view.MenuItem;
 import android.view.View;
 
-import R;
-import adapters.DatabaseAdapter;
-import models.User;
+import com.example.dodocuisto.R;
+import com.example.dodocuisto.controller.DatabaseController;
+import com.example.dodocuisto.modele.User;
 
 public class SignupActivity implements ToolbarActivity {
-    private DatabaseAdapter databaseAdapter;
+    private DatabaseController databaseAdapter;
 
     private TextInputLayout mUsername;
     private TextInputLayout mFullname;
@@ -24,7 +24,7 @@ public class SignupActivity implements ToolbarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        databaseAdapter = DatabaseAdapter.getInstance(this);
+        databaseAdapter = DatabaseController.getInstance(this);
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);

@@ -15,13 +15,13 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapters.DirectionAdapter;
+import com.example.dodocuisto.controller.DirectionController;
 import com.example.dodocuisto.modele.Direction;
 
 
 public class ViewDirectionFragment extends Fragment {
     private List<Direction> directionList;
-    private DirectionAdapter directionAdapter;
+    private DirectionController directionAdapter;
 
     private RecyclerView directionRecyclerView;
     private TextView emptyView;
@@ -52,7 +52,7 @@ public class ViewDirectionFragment extends Fragment {
         directionRecyclerView = view.findViewById(R.id.recyclerView);
         emptyView = view.findViewById(R.id.empty_view);
 
-        directionAdapter = new DirectionAdapter(getActivity(), directionList, false);
+        directionAdapter = new DirectionController(getActivity(), directionList, false);
         toggleEmptyView();
 
         directionRecyclerView.setHasFixedSize(true);

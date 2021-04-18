@@ -25,7 +25,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import com.example.dodocuisto.R;
-import adapters.DatabaseAdapter;
+import com.example.dodocuisto.controller.DatabaseController;
 import com.example.dodocuisto.modele.Direction;
 import com.example.dodocuisto.modele.Ingredient;
 import com.example.dodocuisto.modele.Recette;
@@ -43,7 +43,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
     private Recette currentRecipe;
     private boolean isUpdating;
     private String currentCategory;
-    private DatabaseAdapter databaseAdapter;
+    private DatabaseController databaseAdapter;
 
     private Button nextButton;
     private Toolbar mToolbar;
@@ -53,7 +53,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        databaseAdapter = DatabaseAdapter.getInstance(this);
+        databaseAdapter = DatabaseController.getInstance(this);
 
         Intent intent = getIntent();
         isUpdating = intent.getBooleanExtra("isUpdating", false);

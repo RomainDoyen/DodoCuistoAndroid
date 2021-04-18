@@ -20,23 +20,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import adapters.DatabaseAdapter;
-import adapters.DirectionAdapter;
+import com.example.dodocuisto.controller.DatabaseController;
+import com.example.dodocuisto.controller.DirectionController;
 import com.example.dodocuisto.modele.Direction;
 import com.example.dodocuisto.modele.Recette;
 
 public class RecetteDirectionFragment extends NavigationFragment {
     private DirectionsListener mListener;
     private List<Direction> directionList;
-    private DirectionAdapter directionAdapter;
-    private DatabaseAdapter databaseAdapter;
+    private DirectionController directionAdapter;
+    private DatabaseController databaseAdapter;
 
     private RecyclerView directionRecyclerView;
     private TextView emptyView;
     private Button addButton;
     private EditText directionField;
 
-    public RecipeDirectionsFragment() {
+    public RecetteDirectionFragment() {
         // Required empty public constructor
     }
 
@@ -56,7 +56,7 @@ public class RecetteDirectionFragment extends NavigationFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recipe_directions, container, false);
-        databaseAdapter = DatabaseAdapter.getInstance(getActivity());
+        databaseAdapter = DatabaseController.getInstance(getActivity());
 
         Bundle args = getArguments();
         if (args != null)
@@ -68,7 +68,7 @@ public class RecetteDirectionFragment extends NavigationFragment {
         emptyView = view.findViewById(R.id.empty_view);
         addButton = view.findViewById(R.id.add_button);
         directionField = view.findViewById(R.id.directionField);
-        directionAdapter = new DirectionAdapter(getActivity(), directionList);
+        directionAdapter = new DirectionController(getActivity(), directionList);
         directionAdapter.setDirectionListener(position -> {
             directionList.remove(position);
             toggleEmptyView();

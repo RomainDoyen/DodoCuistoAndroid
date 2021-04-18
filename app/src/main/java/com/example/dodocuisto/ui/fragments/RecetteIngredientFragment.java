@@ -17,23 +17,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-import adapters.DatabaseAdapter;
-import adapters.IngredientAdapter;
+import com.example.dodocuisto.controller.DatabaseController;
+import com.example.dodocuisto.controller.IngredientController;
 import com.example.dodocuisto.modele.Ingredient;
 import com.example.dodocuisto.modele.Recette;
 
 public class RecetteIngredientFragment extends NavigationFragment {
     private IngredientListener mListener;
     private List<Ingredient> ingredientList;
-    private IngredientAdapter ingredientAdapter;
-    private DatabaseAdapter databaseAdapter;
+    private IngredientController ingredientAdapter;
+    private DatabaseController databaseAdapter;
 
     private RecyclerView ingredientRecyclerView;
     private TextView emptyView;
     private Button addButton;
     private EditText ingredientField;
 
-    public RecipeIngredientsFragment() {
+    public RecetteIngredientFragment() {
         // Required empty public constructor
     }
 
@@ -54,7 +54,7 @@ public class RecetteIngredientFragment extends NavigationFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recipe_ingredients, container, false);
-        databaseAdapter = DatabaseAdapter.getInstance(getActivity());
+        databaseAdapter = DatabaseController.getInstance(getActivity());
 
         Bundle args = getArguments();
         if (args != null)
@@ -66,7 +66,7 @@ public class RecetteIngredientFragment extends NavigationFragment {
         emptyView = view.findViewById(R.id.empty_view);
         addButton = view.findViewById(R.id.add_button);
         ingredientField = view.findViewById(R.id.ingredientField);
-        ingredientAdapter = new IngredientAdapter(getActivity(), ingredientList);
+        ingredientAdapter = new IngredientController(getActivity(), ingredientList);
         ingredientAdapter.setIngredientListener(position -> {
             ingredientList.remove(position);
             toggleEmptyView();

@@ -12,4 +12,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorPrimaryDark">#74221C</color>
     <color name="colorPrimaryLight">#F48236</color>
+    <color name="colorAccent">#FF9800</color>
 </resources>

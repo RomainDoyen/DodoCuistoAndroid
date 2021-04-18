@@ -7,21 +7,21 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import R;
-import adapters.DatabaseAdapter;
+import com.example.dodocuisto.R;
+import com.example.dodocuisto.controller.DatabaseController;
 
 public class SigninActivity implements ToolbarActivity {
     private TextInputLayout mLoginEmail;
     private TextInputLayout mLoginPassword;
 
-    private DatabaseAdapter databaseAdapter;
+    private DatabaseController databaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        databaseAdapter = DatabaseAdapter.getInstance(this);
+        databaseAdapter = DatabaseController.getInstance(this);
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);

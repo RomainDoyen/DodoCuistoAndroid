@@ -6,8 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
@@ -21,16 +22,16 @@ import com.elmargomez.typer.Typer;
 
 import java.io.File;
 
-import R;
-import adapters.DatabaseAdapter;
-import adapters.ViewPagerAdapter;
-import models.Recipe;
+import com.example.dodocuisto.R;
+import com.example.dodocuisto.controller.DatabaseController;
+import com.example.dodocuisto.controller.ViewPagerController;
 import utils.ResultCodes;
+import com.example.dodocuisto.modele.Recette;
 
 public class ViewRecetteActivity extends ToolbarActivity {
-    private ViewPagerAdapter mAdapter;
-    private Recipe currentRecipe;
-    private DatabaseAdapter databaseAdapter;
+    private ViewPagerController mAdapter;
+    private Recette currentRecipe;
+    private DatabaseController databaseAdapter;
 
     private ImageView mRecipeImage;
     private TextView mRecipeDescription;
@@ -47,7 +48,7 @@ public class ViewRecetteActivity extends ToolbarActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         currentRecipe = getIntent().getParcelableExtra("recipe");
-        databaseAdapter = DatabaseAdapter.getInstance(this);
+        databaseAdapter = DatabaseController.getInstance(this);
         findViewsById();
 
         setSupportActionBar(mToolbar);

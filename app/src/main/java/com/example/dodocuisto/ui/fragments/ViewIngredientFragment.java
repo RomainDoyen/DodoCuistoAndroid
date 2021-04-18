@@ -15,12 +15,12 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapters.IngredientAdapter;
+import com.example.dodocuisto.controller.IngredientController;
 import com.example.dodocuisto.modele.Ingredient;
 
 public class ViewIngredientFragment extends Fragment {
     private List<Ingredient> ingredientList;
-    private IngredientAdapter ingredientAdapter;
+    private IngredientController ingredientAdapter;
 
     private RecyclerView ingredientRecyclerView;
     private TextView emptyView;
@@ -51,7 +51,7 @@ public class ViewIngredientFragment extends Fragment {
         ingredientRecyclerView = view.findViewById(R.id.recyclerView);
         emptyView = view.findViewById(R.id.empty_view);
 
-        ingredientAdapter = new IngredientAdapter(getActivity(), ingredientList, false);
+        ingredientAdapter = new IngredientController(getActivity(), ingredientList, false);
         toggleEmptyView();
 
         ingredientRecyclerView.setHasFixedSize(true);

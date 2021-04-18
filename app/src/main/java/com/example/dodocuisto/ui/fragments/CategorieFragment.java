@@ -2,12 +2,12 @@ package com.example.dodocuisto.ui.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.LayoutRes;
 import androidx.fragment.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,41 +20,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.dodocuisto.R;
-import adapters.DatabaseAdapter;
-import adapters.RecipeAdapter;
+import com.example.dodocuisto.controller.DatabaseController;
+import com.example.dodocuisto.controller.RecetteController;
 
-public class CategorieFragment extends Fragment {
+
+public abstract class CategorieFragment extends Fragment {
     private CategorizedFragmentListener categorizedFragmentListener;
     protected RecyclerView recipeRecyclerView;
     private TextView emptyView;
-    protected RecipeAdapter recipeAdapter;
-    protected DatabaseAdapter databaseAdapter;
+    protected RecetteController recipeAdapter;
+    protected DatabaseController databaseAdapter;
     protected String currentCategory;
     protected List<Recette> recipes;
+    private Recette recipe;
+    private Pair<View, String>[] pairs;
+    private Object Pair;
 
-    public CategorizedFragment() {
+
+    public CategorieFragment() {
         // Required empty public constructor
         recipes = new ArrayList<>();
-        databaseAdapter = DatabaseAdapter.getInstance(getActivity());
+        databaseAdapter = DatabaseController.getInstance(getActivity());
     }
 
     public static Fragment newInstance(String category) {
         Fragment fragment;
         switch (category) {
-            case "American":
-                fragment = new AmericanFragment();
-                break;
-            case "Asian":
-                fragment = new AsianFragment();
-                break;
-            case "European":
-                fragment = new EuropeanFragment();
-                break;
-            case "Mediterranean":
-                fragment = new MediterraneanFragment();
+            case "Dessert":
+                fragment = new DessertFragment();
                 break;
             default:
-                fragment = new VeganFragment();
+                fragment = new PlatsFragment();
                 break;
         }
 
@@ -108,18 +104,16 @@ public class CategorieFragment extends Fragment {
     public void refresh() {
         recipes = databaseAdapter.getAllRecipesByCategory(currentCategory);
         toggleEmptyView();
-        recipeAdapter = new RecipeAdapter(getActivity(), recipes);
-        recipeAdapter.setRecipeListener(new RecipeAdapter.RecipeListener() {
+        recipeAdapter = new RecetteController(getActivity(), recipes);
+        recipeAdapter.setRecipeListener(new RecetteController().RecipeListener() {
             @Override
             public void onShowRecipe(Recette recipe, Pair<View, String>[] pairs) {
                 categorizedFragmentListener.onShowRecipe(recipe, pairs);
             }
-
             @Override
             public void onEditRecipe(Recette recipe) {
                 categorizedFragmentListener.onEditRecipe(recipe);
             }
-
             @Override
             public void onDeleteRecipe(long recipeId) {
                 categorizedFragmentListener.onDeleteRecipe(recipeId);
