@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.SigninActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
@@ -23,7 +25,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -41,9 +43,9 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:hint="Email" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -59,7 +61,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Password" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/login_btn"
@@ -74,7 +76,8 @@
         android:text="Login"
         android:textColor="@android:color/white"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        android:layout_marginRight="20dp" />
 
     <TextView
         android:id="@+id/create_acc_label"

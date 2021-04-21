@@ -12,8 +12,6 @@ import java.util.List;
 
 import com.example.dodocuisto.R;
 import com.example.dodocuisto.modele.Direction;
-import com.example.dodocuisto.modele.Ingredient;
-
 
 public class DirectionController extends RecyclerView.Adapter<DirectionController.DirectionViewHolder> {
     private List<Direction> directionList;

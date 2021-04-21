@@ -1,28 +1,26 @@
 package com.example.dodocuisto.view;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+
+import com.example.dodocuisto.utils.ResultCodes;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 
 import com.example.dodocuisto.R;
 import com.example.dodocuisto.controller.DatabaseController;
 import com.example.dodocuisto.controller.ViewPagerController;
-import com.example.dodocuisto.controller.ResultCodes;
 import com.example.dodocuisto.modele.Recette;
 
 public class ViewRecetteActivity extends ToolbarActivity {

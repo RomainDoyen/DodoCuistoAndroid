@@ -5,8 +5,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.dodocuisto.modele.Recette;
-import com.example.dodocuisto.ui.fragments.ViewIngredientFragment;
-import com.example.dodocuisto.ui.fragments.ViewDirectionFragment;
+import com.example.dodocuisto.view.fragments.ViewIngredientFragment;
+import com.example.dodocuisto.view.fragments.ViewDirectionFragment;
 
 public class ViewPagerController extends FragmentStatePagerAdapter {
     private static final int TAB_COUNT = 2;

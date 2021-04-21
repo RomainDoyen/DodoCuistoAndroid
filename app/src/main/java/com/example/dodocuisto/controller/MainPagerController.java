@@ -4,10 +4,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.dodocuisto.ui.fragments.*;
+import com.example.dodocuisto.view.fragments.*;
 
 public class MainPagerController extends FragmentStatePagerAdapter {
-    private static final int TAB_COUNT = 5;
+    private static final int TAB_COUNT = 2;
     private String[] tabTitles = {"Plats Créoles", "Dessert"};
 
     public MainPagerController(FragmentManager fm) {

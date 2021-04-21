@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Pair;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;

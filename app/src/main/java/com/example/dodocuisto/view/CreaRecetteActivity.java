@@ -27,12 +27,12 @@ import com.example.dodocuisto.controller.DatabaseController;
 import com.example.dodocuisto.modele.Direction;
 import com.example.dodocuisto.modele.Ingredient;
 import com.example.dodocuisto.modele.Recette;
-import com.example.dodocuisto.ui.fragments.NavigationFragment;
-import com.example.dodocuisto.ui.fragments.RecetteDirectionFragment;
-import com.example.dodocuisto.ui.fragments.RecetteImageFragment;
-import com.example.dodocuisto.ui.fragments.RecetteIngredientFragment;
-import com.example.dodocuisto.controller.Files;
-import com.example.dodocuisto.controller.ResultCodes;
+import com.example.dodocuisto.utils.Files;
+import com.example.dodocuisto.utils.ResultCodes;
+import com.example.dodocuisto.view.fragments.NavigationFragment;
+import com.example.dodocuisto.view.fragments.RecetteDirectionFragment;
+import com.example.dodocuisto.view.fragments.RecetteImageFragment;
+import com.example.dodocuisto.view.fragments.RecetteIngredientFragment;
 
 
 public class CreaRecetteActivity extends AppCompatActivity implements RecetteImageFragment.ImageListener, RecetteDirectionFragment.DirectionsListener, RecetteIngredientFragment.IngredientListener {

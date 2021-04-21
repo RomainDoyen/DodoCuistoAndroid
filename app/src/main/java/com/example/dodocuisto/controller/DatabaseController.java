@@ -3,17 +3,14 @@ package com.example.dodocuisto.controller;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.dodocuisto.database.RecetteDatabase;
-import com.example.dodocuisto.database.SQLiteDatabaseHelper;
-import com.example.dodocuisto.modele.Recette;
-
 import java.util.List;
 
-import com.example.dodocuisto.controller.RecetteController;
+import com.example.dodocuisto.database.RecetteDatabase;
+import com.example.dodocuisto.database.SQLiteDatabaseHelper;
 import com.example.dodocuisto.database.UserDatabase;
 import com.example.dodocuisto.modele.Recette;
 import com.example.dodocuisto.modele.User;
-import com.example.dodocuisto.controller.UserPreferences;
+import com.example.dodocuisto.utils.UserPreferences;
 
 public class DatabaseController {
     private static DatabaseController instance;
