@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:text="Your recipe has no ingredients, yet."
+        android:text="Votre recette n'a pas encore d'ingrédients."
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -34,14 +34,14 @@
             android:inputType="text"
             android:layout_margin="8dp"
             android:layout_toLeftOf="@id/add_button"
-            android:hint="New ingredient" />
+            android:hint="Nouvel ingrédient" />
 
         <Button
             android:id="@+id/add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="Add" />
+            android:text="Ajouter" />
     </RelativeLayout>
 
 </RelativeLayout>

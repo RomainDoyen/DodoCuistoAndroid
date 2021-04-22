@@ -41,7 +41,7 @@
                 android:textColor="#4c4c4c"
                 android:textSize="16sp"
                 android:transitionName="name_shared"
-                tools:text="Recipe 1" />
+                tools:text="Recette 1" />
 
             <ImageView
                 android:id="@+id/overflow"

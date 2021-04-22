@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="No recipes to show"
+        android:text="Pas de recettes à montrer"
         android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView

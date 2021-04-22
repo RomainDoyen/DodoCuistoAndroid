@@ -27,7 +27,7 @@ public class UserPreferences {
                     .putString(PASSWORD, currentUser.getPassword())
                     .apply();
         } else {
-            Log.i(TAG, "cannot save current user: user is NULL.");
+            Log.i(TAG, "Impossible de sauvegarder l'utilisateur actuel : l'utilisateur est NULL.");
         }
     }
 

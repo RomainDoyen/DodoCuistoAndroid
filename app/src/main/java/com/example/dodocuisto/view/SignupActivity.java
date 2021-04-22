@@ -28,7 +28,7 @@ public class SignupActivity extends ToolbarActivity {
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Create Account");
+        getSupportActionBar().setTitle("Créer un compte");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mUsername = findViewById(R.id.reg_display_name);

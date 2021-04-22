@@ -145,11 +145,11 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
             case REQUEST_ADD_RECIPE:
                 switch (resultCode) {
                     case ResultCodes.RECIPE_ADDED:
-                        Snackbar.make(getWindow().getDecorView(), "Recipe added.", Snackbar.LENGTH_LONG)
+                        Snackbar.make(getWindow().getDecorView(), "Recette ajoutée.", Snackbar.LENGTH_LONG)
                                 .show();
                         break;
                     case ResultCodes.RECIPE_EDITED:
-                        Snackbar.make(getWindow().getDecorView(), "Recipe modified.", Snackbar.LENGTH_LONG)
+                        Snackbar.make(getWindow().getDecorView(), "Recette modifiée.", Snackbar.LENGTH_LONG)
                                 .show();
                         break;
                 }
@@ -207,6 +207,6 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
     @Override
     public void onDeleteRecipe(long recipeId) {
         databaseAdapter.deleteRecipe(recipeId);
-        Snackbar.make(getWindow().getDecorView(), "Recipe deleted.", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(getWindow().getDecorView(), "Suppression de la recette.", Snackbar.LENGTH_LONG).show();
     }
 }

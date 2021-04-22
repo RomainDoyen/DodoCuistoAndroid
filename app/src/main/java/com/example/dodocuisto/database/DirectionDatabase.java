@@ -41,7 +41,7 @@ public class DirectionDatabase {
             }
         }
 
-        Log.i("DAO", "DirectionDAO returning: " + directions + " for recipe ID: " + recipeId);
+        Log.i("Database", "DirectionDatabase returning: " + directions + " for recipe ID: " + recipeId);
         return directions;
     }
 

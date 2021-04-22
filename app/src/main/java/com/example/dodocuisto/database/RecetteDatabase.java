@@ -32,17 +32,17 @@ public class RecetteDatabase {
             throw new IllegalStateException("Cannot insert recipe: the recipe is incomplete.");
 
         long newRecipeId = insert(recipe.getName(), recipe.getCategory(), recipe.getDescription(), recipe.getImagePath());
-        Log.i("DAO", "Inserted new recipe : " + newRecipeId);
-        Log.i("DAO", "New recipe has " + recipe.getDirections().size() + " directions.");
+        Log.i("Database", "Inserted new recipe : " + newRecipeId);
+        Log.i("Database", "New recipe has " + recipe.getDirections().size() + " directions.");
         recipe.getIngredients().forEach(ingredient -> {
                     ingredient.setRecipeId(newRecipeId);
                     ingredientDAO.insert(ingredient);
-                    Log.i("DAO", "Inserted " + ingredient);
+                    Log.i("Database", "Inserted " + ingredient);
                 });
         recipe.getDirections().forEach(direction -> {
                     direction.setRecipeId(newRecipeId);
                     directionDAO.insert(direction);
-                    Log.i("DAO", "Inserted " + direction);
+                    Log.i("Database", "Inserted " + direction);
                 });
 
         return newRecipeId;
@@ -78,7 +78,7 @@ public class RecetteDatabase {
             }
         }
 
-        Log.i("DAO", "RecipeDAO returning: " + recipes);
+        Log.i("Database", "RecetteDatabase returning: " + recipes);
         return recipes;
     }
 

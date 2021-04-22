@@ -41,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
         if (UserPreferences.isFirstRun(this)) {
             UserPreferences.setIsFirstRun(this, false);
 
-            databaseAdapter.addNewUser(new User("testrun", "test runner", "testrun@recipeapp.com", "password"));
+            databaseAdapter.addNewUser(new User("dodocuisto", "dodo cuisto", "dodocuisto@gmail.com", "password"));
 
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -69,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     loadDefaultRecipes();
                 else
-                    Toast.makeText(this, "Permission denied to write default recipes.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permission refusée pour écrire les recettes par défaut.", Toast.LENGTH_LONG).show();
 
                 navigateToLogin();
                 break;
@@ -138,20 +138,22 @@ public class SplashActivity extends AppCompatActivity {
         outStream.close();
 
         List<Ingredient> ingredients = new ArrayList<>();
-        ingredients.add(new Ingredient("2 Tbs. extra-virgin olive oil"));
-        ingredients.add(new Ingredient("2 medium cloves garlic, minced"));
-        ingredients.add(new Ingredient("2 Tbs. chopped fresh aromatic herbs (thyme, sage, rosemary, marjoram, or a mix)"));
-        ingredients.add(new Ingredient("⅓ cup soy sauce"));
-        ingredients.add(new Ingredient("1 Tbs. kosher salt"));
-        ingredients.add(new Ingredient("1 Tbs. ground black pepper"));
-        ingredients.add(new Ingredient("1-1/2- to 2-lb. flank steak, trimmed of any excess fat and membrane"));
-        ingredients.add(new Ingredient("1 recipe Chunky Tomato-Basil Vinaigrette"));
+        ingredients.add(new Ingredient("-Huile d'olive"));
+        ingredients.add(new Ingredient("-Curcuma"));
+        ingredients.add(new Ingredient("-Sel"));
+        ingredients.add(new Ingredient("-Poivre"));
+        ingredients.add(new Ingredient("-Thym"));
+        ingredients.add(new Ingredient("-4 Tomates"));
+        ingredients.add(new Ingredient("-6 Saucisses fumées"));
+        ingredients.add(new Ingredient("-6 gousse d'ail"));
+        ingredients.add(new Ingredient("-4 Oignons"));
         List<Direction> directions = new ArrayList<>();
-        directions.add(new Direction("Mix the oil, garlic, herbs, salt, and pepper in a small bowl. Rub all over the steak and let sit for about 20 min. at room temperature. Meanwhile, heat a gas grill to medium-high (you should be able to hold your hand 2 inches above the grate for 3 to 4 seconds) or prepare a medium-hot charcoal fire"));
-        directions.add(new Direction("If your grill has a hot spot, position the thicker end of the flank steak nearer the hottest part of the fire. Grill until medium rare, 12 to 15 min., turning the steak every 3 to 4 min. to ensure even cooking. The thickest part of the steak will register 135°F to 140°F on an instant-read thermometer"));
-        directions.add(new Direction("Transfer the steak to a cutting board and let it rest for 3 to 5 min. Slice across the grain, portion onto dinner plates, spoon on the vinaigrette, and serve."));
-        databaseAdapter.addNewRecipe(new Recette("Mediterranean steak",
-                "Mediterranean", "This steak gets a wet rub before grilling; the oil helps the other flavors spread.", ingredients, directions, file.getAbsolutePath()));
+        directions.add(new Direction("Piquez les saucisses et mettez les dans l'eau bouillante pendant 10 mn, dans la même marmite qui vous servira à la préparation du plat afin de garder les saveurs."));
+        directions.add(new Direction("Videz la marmite. Réservez les saucisses. Faites-y chauffer de l'huile d'olive. Faites revenir les oignons émincés et l'ail écrasé sans qu'ils soient trop colorés.\n" +
+                "\n"));
+        directions.add(new Direction("Coupez les saucisses en troncons de 1,5 cm puis faites les revenir avec les oignons. Au bout de 5 mn, ajoutez les tomates coupées en petits morceaux et les aromates (le piment en morceaux). Mélangez le tout puis laisser mijoter sur feu doux en ôtant le couvercle de temps à autre pour éliminer l'excès d'eau. Servez avec du riz thai"));
+        databaseAdapter.addNewRecipe(new Recette("Rougaille Saucisse",
+                "Reunion", "Niveau de difficulté : Facile.", ingredients, directions, file.getAbsolutePath()));
     }
 
     private void navigateToLogin() {

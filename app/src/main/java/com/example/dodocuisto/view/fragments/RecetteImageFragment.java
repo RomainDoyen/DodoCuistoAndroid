@@ -44,7 +44,7 @@ public class RecetteImageFragment extends NavigationFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_recipe_image, container, false);
         recipeImage = view.findViewById(R.id.recipe_image);
         selectImageBtn = view.findViewById(R.id.choose_image);
@@ -69,6 +69,7 @@ public class RecetteImageFragment extends NavigationFragment {
         return view;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -88,7 +89,7 @@ public class RecetteImageFragment extends NavigationFragment {
     @Override
     public void onNext() {
         if (currentRecipeImage == null) {
-            Toast.makeText(getActivity(), "Please choose an image for this recipe.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Veuillez choisir une image pour cette recette.", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -96,16 +97,16 @@ public class RecetteImageFragment extends NavigationFragment {
         String description = recipeDescription.getText().toString();
 
         if (name.isEmpty()) {
-            Toast.makeText(getActivity(), "Please specify a name for this recipe.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Veuillez indiquer un nom pour cette recette.", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (description.isEmpty()) {
-            Toast.makeText(getActivity(), "Please type in a description for this recipe.", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Veuillez saisir une description pour cette recette.", Toast.LENGTH_LONG).show();
             return;
         } else {
             if (description.length() > 200) {
-                Toast.makeText(getActivity(), "Your description shouldn't exceed " + MAX_DESCRIPTION_LENGTH + " characters.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Votre description ne doit pas dépasser " + MAX_DESCRIPTION_LENGTH + " mots.", Toast.LENGTH_LONG).show();
                 return;
             }
         }
@@ -118,7 +119,7 @@ public class RecetteImageFragment extends NavigationFragment {
         currentRecipeImage = imagePath;
         if (!currentRecipeImage.isEmpty()) {
             recipeImage.setImageURI(Uri.fromFile(new File(currentRecipeImage)));
-            selectImageBtn.setText("Update recipe image");
+            selectImageBtn.setText("Mise à jour de la recette");
         }
     }
 

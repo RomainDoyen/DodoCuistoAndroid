@@ -26,7 +26,7 @@ public class SigninActivity extends ToolbarActivity {
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Log in to your account");
+        getSupportActionBar().setTitle("Connectez-vous à votre compte");
 
         mLoginEmail = findViewById(R.id.login_email);
         mLoginPassword = findViewById(R.id.login_password);
@@ -49,7 +49,7 @@ public class SigninActivity extends ToolbarActivity {
             startActivity(intent);
             finish();
         } else {
-            Toast.makeText(this, "Invalid credentials.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Informations d'identification non valides.", Toast.LENGTH_LONG).show();
         }
     }
 

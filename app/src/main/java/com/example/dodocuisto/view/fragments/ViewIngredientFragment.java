@@ -25,9 +25,7 @@ public class ViewIngredientFragment extends Fragment {
     private RecyclerView ingredientRecyclerView;
     private TextView emptyView;
 
-    public ViewIngredientFragment() {
-        // Required empty public constructor
-    }
+    public ViewIngredientFragment() { }
 
     public static ViewIngredientFragment newInstance(List<Ingredient> ingredients) {
         ViewIngredientFragment fragment = new ViewIngredientFragment();
@@ -41,7 +39,7 @@ public class ViewIngredientFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_view_ingredients, container, false);
 
         Bundle args = getArguments();

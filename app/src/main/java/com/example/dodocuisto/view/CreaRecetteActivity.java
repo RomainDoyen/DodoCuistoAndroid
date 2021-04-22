@@ -113,7 +113,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
             case REQUEST_TO_ACCESS_GALLERY:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) openGallery();
                 else
-                    Toast.makeText(this, "Permission denied to access the gallery.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Permission refusée pour accéder à la galerie.", Toast.LENGTH_LONG).show();
                 break;
         }
     }
@@ -129,17 +129,17 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
             case 0:
                 fragment = RecetteImageFragment.newInstance(currentRecipe);
                 ft.setCustomAnimations(R.animator.slide_in_left, R.animator.slide_out_right);
-                nextButtonText = "NEXT";
+                nextButtonText = "Suivant";
                 break;
             case 1:
                 fragment = RecetteIngredientFragment.newInstance(currentRecipe);
                 ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_left);
-                nextButtonText = "NEXT";
+                nextButtonText = "Suivant";
                 break;
             case 2:
                 fragment = RecetteDirectionFragment.newInstance(currentRecipe);
                 ft.setCustomAnimations(R.animator.slide_in_right, R.animator.slide_out_left);
-                nextButtonText = "Finish";
+                nextButtonText = "Terminer";
                 break;
         }
 
@@ -194,7 +194,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
         else
             databaseAdapter.addNewRecipe(currentRecipe);
 
-        Log.i("CreateRecipeActivity", "Final recipe: " + currentRecipe);
+        Log.i("CreaRecipeActivity", "Final recipe: " + currentRecipe);
         setResult(isUpdating ? ResultCodes.RECIPE_EDITED : ResultCodes.RECIPE_ADDED);
         finish();
     }

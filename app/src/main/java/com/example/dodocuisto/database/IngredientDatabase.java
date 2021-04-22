@@ -41,7 +41,7 @@ public class IngredientDatabase  {
             }
         }
 
-        Log.i("DAO", "IngredientDAO returning: " + ingredients + " for recipe ID: " + recipeId);
+        Log.i("Database", "IngredientDatabase returning: " + ingredients + " for recipe ID: " + recipeId);
         return ingredients;
     }
 

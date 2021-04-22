@@ -37,9 +37,7 @@ public class IngredientController extends RecyclerView.Adapter<IngredientControl
 
     @Override
     public IngredientViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(viewType == 0 ? R.layout.ingredient_item_row : R.layout.ingredient_item_row_non_editable,
-                        parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(viewType == 0 ? R.layout.ingredient_item_row : R.layout.ingredient_item_row_non_editable, parent, false);
         return new IngredientViewHolder(v);
     }
 

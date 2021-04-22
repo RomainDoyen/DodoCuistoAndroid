@@ -34,9 +34,7 @@ public class RecetteDirectionFragment extends NavigationFragment {
     private Button addButton;
     private EditText directionField;
 
-    public RecetteDirectionFragment() {
-        // Required empty public constructor
-    }
+    public RecetteDirectionFragment() { }
 
     public static RecetteDirectionFragment newInstance(Recette recipe) {
         RecetteDirectionFragment fragment = new RecetteDirectionFragment();
@@ -52,7 +50,7 @@ public class RecetteDirectionFragment extends NavigationFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_recipe_directions, container, false);
         databaseAdapter = DatabaseController.getInstance(getActivity());
 
@@ -80,14 +78,14 @@ public class RecetteDirectionFragment extends NavigationFragment {
         directionRecyclerView.setAdapter(directionAdapter);
 
         addButton.setOnClickListener(v -> {
-            Log.i("DAO", "Add button pressed.");
+            Log.i("Database", "Add button pressed.");
             String newDirection = directionField.getText().toString();
-            Log.i("DAO", "New direction: " + newDirection);
+            Log.i("Database", "New direction: " + newDirection);
             if (!newDirection.isEmpty()) {
-                Log.i("DAO", "Directions list BEFORE: " + directionList);
+                Log.i("Database", "Directions list BEFORE: " + directionList);
                 directionField.setText("");
                 directionList.add(new Direction(newDirection));
-                Log.i("DAO", "Directions list AFTER: " + directionList);
+                Log.i("Database", "Directions list AFTER: " + directionList);
                 toggleEmptyView();
                 directionAdapter.notifyDataSetChanged();
             }
@@ -106,14 +104,14 @@ public class RecetteDirectionFragment extends NavigationFragment {
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
             mListener = (DirectionsListener) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement DirectionsListener");
+            throw new ClassCastException(activity.toString() + " must implement DirectionsListener");
         }
     }
 
@@ -126,7 +124,7 @@ public class RecetteDirectionFragment extends NavigationFragment {
     @Override
     public void onNext() {
         if (mListener != null) {
-            Log.i("DAO", "Steps finished: " + directionList);
+            Log.i("Database", "Steps finished: " + directionList);
             mListener.onStepsFinished(directionList);
         }
     }

@@ -32,13 +32,12 @@ public abstract class CategorieFragment extends Fragment {
     protected DatabaseController databaseAdapter;
     protected String currentCategory;
     protected List<Recette> recipes;
-    private Recette recipe;
+    /*private Recette recipe;
     private Pair<View, String>[] pairs;
-    private Object Pair;
+    private Object Pair;*/
 
 
     public CategorieFragment() {
-        // Required empty public constructor
         recipes = new ArrayList<>();
         databaseAdapter = DatabaseController.getInstance(getActivity());
     }
@@ -64,7 +63,7 @@ public abstract class CategorieFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View rootView = inflater.inflate(getFragmentLayout(), container, false);
 
         Bundle args = getArguments();
@@ -90,8 +89,7 @@ public abstract class CategorieFragment extends Fragment {
         try {
             categorizedFragmentListener = (CategorizedFragmentListener) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement CategorizedFragmentListener");
+            throw new ClassCastException(activity.toString() + " must implement CategorizedFragmentListener");
         }
     }
 

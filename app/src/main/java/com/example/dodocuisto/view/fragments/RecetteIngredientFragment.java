@@ -33,9 +33,7 @@ public class RecetteIngredientFragment extends NavigationFragment {
     private Button addButton;
     private EditText ingredientField;
 
-    public RecetteIngredientFragment() {
-        // Required empty public constructor
-    }
+    public RecetteIngredientFragment() { }
 
     public static RecetteIngredientFragment newInstance(Recette recipe) {
         RecetteIngredientFragment fragment = new RecetteIngredientFragment();
@@ -50,9 +48,8 @@ public class RecetteIngredientFragment extends NavigationFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_recipe_ingredients, container, false);
         databaseAdapter = DatabaseController.getInstance(getActivity());
 
@@ -108,8 +105,7 @@ public class RecetteIngredientFragment extends NavigationFragment {
         try {
             mListener = (IngredientListener) activity;
         } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString()
-                    + " must implement IngredientListener");
+            throw new ClassCastException(activity.toString() + " must implement IngredientListener");
         }
     }
 

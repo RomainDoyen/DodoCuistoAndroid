@@ -26,9 +26,7 @@ public class ViewDirectionFragment extends Fragment {
     private RecyclerView directionRecyclerView;
     private TextView emptyView;
 
-    public ViewDirectionFragment() {
-        // Required empty public constructor
-    }
+    public ViewDirectionFragment() { }
 
     public static ViewDirectionFragment newInstance(List<Direction> directions) {
         ViewDirectionFragment fragment = new ViewDirectionFragment();
@@ -42,7 +40,7 @@ public class ViewDirectionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_view_directions, container, false);
 
         Bundle args = getArguments();
