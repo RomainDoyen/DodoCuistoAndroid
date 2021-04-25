@@ -119,7 +119,7 @@ public class RecetteImageFragment extends NavigationFragment {
         currentRecipeImage = imagePath;
         if (!currentRecipeImage.isEmpty()) {
             recipeImage.setImageURI(Uri.fromFile(new File(currentRecipeImage)));
-            selectImageBtn.setText("Mise à jour de la recette");
+            selectImageBtn.setText("Mise à jour de l'image");
         }
     }
 

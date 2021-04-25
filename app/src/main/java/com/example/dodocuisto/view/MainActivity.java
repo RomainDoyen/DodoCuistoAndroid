@@ -61,7 +61,7 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Recipes");
+        getSupportActionBar().setTitle("Recette créoles");
 
         mViewPager = findViewById(R.id.viewpager);
         mTabLayout = findViewById(R.id.tablayout);
@@ -145,12 +145,10 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
             case REQUEST_ADD_RECIPE:
                 switch (resultCode) {
                     case ResultCodes.RECIPE_ADDED:
-                        Snackbar.make(getWindow().getDecorView(), "Recette ajoutée.", Snackbar.LENGTH_LONG)
-                                .show();
+                        Snackbar.make(getWindow().getDecorView(), "Recette ajoutée.", Snackbar.LENGTH_LONG).show();
                         break;
                     case ResultCodes.RECIPE_EDITED:
-                        Snackbar.make(getWindow().getDecorView(), "Recette modifiée.", Snackbar.LENGTH_LONG)
-                                .show();
+                        Snackbar.make(getWindow().getDecorView(), "Recette modifiée.", Snackbar.LENGTH_LONG).show();
                         break;
                 }
                 break;

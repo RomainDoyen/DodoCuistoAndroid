@@ -32,13 +32,11 @@ public class UserPreferences {
     }
 
     public static boolean isUserLoggedIn(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
-                .contains(ID);
+        return PreferenceManager.getDefaultSharedPreferences(context).contains(ID);
     }
 
     public static User loadUser(Context context) {
-        SharedPreferences sharedPreferences =
-                PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (sharedPreferences.contains(ID)) {
             return new User(
                     sharedPreferences.getInt(ID, -1),
@@ -60,8 +58,7 @@ public class UserPreferences {
     }
 
     public static boolean isFirstRun(Context context) {
-        return PreferenceManager.getDefaultSharedPreferences(context)
-                .getBoolean(FIRST_RUN, true);
+        return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(FIRST_RUN, true);
     }
 
     public static void clear(Context context) {

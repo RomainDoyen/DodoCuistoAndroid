@@ -5,11 +5,11 @@
         android:id="@+id/edit_recipe"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_edit"
-        android:title="Edit recipe" />
+        android:title="Editer la recette" />
 
     <item
         android:id="@+id/delete_recipe"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_delete"
-        android:title="Delete recipe" />
+        android:title="Supprimer la recette" />
 </menu>

@@ -75,10 +75,6 @@ public class Direction implements Parcelable {
 
     @Override
     public String toString() {
-        return "Direction{" +
-                "id=" + id +
-                ", body='" + body + '\'' +
-                ", recipeId=" + recipeId +
-                '}';
+        return "Direction{" + "id=" + id + ", body='" + body + '\'' + ", recipeId=" + recipeId + '}';
     }
 }

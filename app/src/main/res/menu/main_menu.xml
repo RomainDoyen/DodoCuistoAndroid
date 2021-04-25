@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/new_recipe"
-        android:title="New recipe" />
+        android:title="Nouvelle recette" />
     <item
         android:id="@+id/sign_out"
-        android:title="Sign out" />
+        android:title="Se deconnecter" />
 </menu>

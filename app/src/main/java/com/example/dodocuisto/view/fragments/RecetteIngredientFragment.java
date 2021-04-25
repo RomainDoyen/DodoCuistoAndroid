@@ -99,6 +99,7 @@ public class RecetteIngredientFragment extends NavigationFragment {
         }
     }
 
+    @SuppressWarnings("depreciation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

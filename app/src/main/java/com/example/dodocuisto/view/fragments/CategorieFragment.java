@@ -32,10 +32,6 @@ public abstract class CategorieFragment extends Fragment {
     protected DatabaseController databaseAdapter;
     protected String currentCategory;
     protected List<Recette> recipes;
-    /*private Recette recipe;
-    private Pair<View, String>[] pairs;
-    private Object Pair;*/
-
 
     public CategorieFragment() {
         recipes = new ArrayList<>();
@@ -83,6 +79,7 @@ public abstract class CategorieFragment extends Fragment {
         refresh();
     }
 
+    @SuppressWarnings("depreciation")
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);

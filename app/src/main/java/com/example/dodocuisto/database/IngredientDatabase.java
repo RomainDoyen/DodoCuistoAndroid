@@ -35,8 +35,7 @@ public class IngredientDatabase  {
                 Config.KEY_RECIPE_ID + " = ?", new String[]{recipeId + ""}, null, null, null)) {
             if (cursor.moveToFirst()) {
                 do {
-                    ingredients.add(new Ingredient(
-                            cursor.getLong(0), cursor.getString(1), cursor.getLong(2)));
+                    ingredients.add(new Ingredient(cursor.getLong(0), cursor.getString(1), cursor.getLong(2)));
                 } while (cursor.moveToNext());
             }
         }

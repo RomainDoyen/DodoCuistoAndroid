@@ -30,8 +30,7 @@ public class RecetteController extends RecyclerView.Adapter<RecetteController.Re
 
     @Override
     public RecipeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recipe_item_row, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recipe_item_row, parent, false);
         return new RecipeViewHolder(v);
     }
 
@@ -76,8 +75,7 @@ public class RecetteController extends RecyclerView.Adapter<RecetteController.Re
         private void showPopupMenu(View view) {
             PopupMenu popup = new PopupMenu(view.getContext(), view);
             popup.inflate(R.menu.grid_popup_menu);
-            popup.setOnMenuItemClickListener(
-                    new MyMenuItemClickListener(recipeList.get(getAdapterPosition())));
+            popup.setOnMenuItemClickListener(new MyMenuItemClickListener(recipeList.get(getAdapterPosition())));
             popup.show();
         }
 

@@ -177,9 +177,7 @@ public class CreaRecetteActivity extends AppCompatActivity implements RecetteIma
 
     @Override
     public void onSelectImage() {
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_TO_ACCESS_GALLERY);
         } else {
             openGallery();

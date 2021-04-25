@@ -65,8 +65,7 @@ public class SplashActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode) {
             case REQUEST_TO_WRITE:
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     loadDefaultRecipes();
                 else
                     Toast.makeText(this, "Permission refusée pour écrire les recettes par défaut.", Toast.LENGTH_LONG).show();
@@ -91,7 +90,7 @@ public class SplashActivity extends AppCompatActivity {
 
         File file = new File(extStorageDirectory, "boucanebringelle.jpg");
         FileOutputStream outStream = new FileOutputStream(file);
-        bm.compress(Bitmap.CompressFormat.PNG, 100, outStream);
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
         outStream.flush();
         outStream.close();
 

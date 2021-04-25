@@ -38,15 +38,13 @@ public class Recette implements Parcelable {
         this.id = id;
     }
 
-    public Recette(String name, String category, String description,
-                   List<Ingredient> ingredients, List<Direction> directions, String imagePath) {
+    public Recette(String name, String category, String description, List<Ingredient> ingredients, List<Direction> directions, String imagePath) {
         this(name, category, description, imagePath);
         this.ingredients = ingredients;
         this.directions = directions;
     }
 
-    public Recette(long id, String name, String category, String description,
-                   List<Ingredient> ingredients, List<Direction> directions, String imagePath) {
+    public Recette(long id, String name, String category, String description, List<Ingredient> ingredients, List<Direction> directions, String imagePath) {
         this(name, category, description, ingredients, directions, imagePath);
         this.id = id;
     }

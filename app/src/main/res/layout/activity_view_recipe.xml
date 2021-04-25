@@ -9,14 +9,17 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        style="@style/MyCustomTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom"
         app:tabContentStart="50dp"
-        android:layout_marginTop="15dp"
-        app:tabMode="scrollable" />
+        app:tabMode="scrollable"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
