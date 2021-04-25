@@ -92,10 +92,10 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
                 @DrawableRes int image = -1;
                 switch (position) {
                     case 0:
-                        image = R.drawable.boucanebringelle;
+                        image = R.drawable.ic_header;
                         break;
                     case 1:
-                        image = R.drawable.rougailsaucisses;
+                        image = R.drawable.ic_header;
                         break;
                 }
 
