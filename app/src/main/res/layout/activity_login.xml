@@ -82,20 +82,13 @@
     <TextView
         android:id="@+id/create_acc_label"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_height="150dp"
         android:gravity="center"
         android:textSize="16sp"
         android:onClick="onCreateAccountPressed"
+        android:background="@drawable/ic_footer"
         android:textColor="@android:color/black"
         android:text="Ou créez un nouveau compte ici"
         app:layout_constraintBottom_toBottomOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_footer"
-        app:layout_constraintBottom_toBottomOf="@id/create_acc_label"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

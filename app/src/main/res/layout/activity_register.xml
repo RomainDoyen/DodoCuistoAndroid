@@ -116,4 +116,12 @@
         app:layout_constraintTop_toBottomOf="@+id/login_fullname"
         android:layout_marginRight="20dp" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/ic_footer"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
