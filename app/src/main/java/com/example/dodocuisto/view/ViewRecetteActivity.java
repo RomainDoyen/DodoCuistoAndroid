@@ -73,33 +73,6 @@ public class ViewRecetteActivity extends ToolbarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.view_recipe_menu, menu);
-
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.nav_search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setIconifiedByDefault(false);
-
-        MenuItem searchViewItem = menu.findItem(R.id.nav_search);
-        SearchView searchView1 = (SearchView) MenuItemCompat.getActionView(searchViewItem);
-
-        searchView1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                if (list.containts(query)) {
-                    databaseAdapter.getAllRecipesByCategory().filter(query);
-                } else  {
-                    Toast.makeText(ViewRecetteActivity.this, "Introuvable", Toast.LENGTH_LONG).show();
-                }
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                mAdapter.getFilter().filter(newText);
-                return false;
-            }
-        });
-
         return true;
     }
 

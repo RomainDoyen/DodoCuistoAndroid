@@ -61,7 +61,6 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
 
         mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Recette créoles");
 
         mViewPager = findViewById(R.id.viewpager);
         mTabLayout = findViewById(R.id.tablayout);
@@ -72,10 +71,6 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
         mTabLayout.bringToFront();
         mAdapter = new MainPagerController(getSupportFragmentManager());
 
-        /*Typeface font = Typer.set(this).getFont(Font.ROBOTO_MEDIUM);
-        mCollapsingToolbarLayout.setCollapsedTitleTypeface(font);
-        mCollapsingToolbarLayout.setExpandedTitleTypeface(font);*/
-
         mViewPager.setAdapter(mAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
@@ -83,9 +78,7 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) { }
 
             @Override
             public void onPageSelected(int position) {
@@ -109,15 +102,40 @@ public class MainActivity extends ToolbarActivity implements CategorieFragment.C
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) { }
         });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        /*SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.nav_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false);*/
+
+        /*MenuItem searchViewItem = menu.findItem(R.id.nav_search);
+        SearchView searchView1 = (SearchView) MenuItemCompat.getActionView(searchViewItem);
+
+        searchView1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (list.containts(query)) {
+                    databaseAdapter.getAllRecipesByCategory().filter(query);
+                } else  {
+                    Toast.makeText(ViewRecetteActivity.this, "Introuvable", Toast.LENGTH_LONG).show();
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });*/
+
         return true;
     }
 

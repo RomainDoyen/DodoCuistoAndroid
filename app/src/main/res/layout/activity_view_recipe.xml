@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@color/colorPrimary"
+                android:src="@color/white"
                 android:transitionName="image_shared"
                 app:layout_collapseMode="parallax" />
 
@@ -98,7 +98,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="60dp"
         android:background="@drawable/ic_footer"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"/>

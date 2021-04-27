@@ -15,9 +15,12 @@
         android:layout_gravity="bottom"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom"
+        app:layout_constraintBottom_toBottomOf="@+id/appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:tabContentStart="50dp"
-        app:tabMode="scrollable"
-        app:layout_constraintBottom_toBottomOf="@+id/appbar" />
+        app:tabMode="scrollable" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -96,7 +99,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="60dp"
         android:background="@drawable/ic_footer"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"/>

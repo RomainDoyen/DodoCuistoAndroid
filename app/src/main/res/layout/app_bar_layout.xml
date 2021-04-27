@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_app_bar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorAccent"
+    android:layout_height="150dp"
+    android:background="@drawable/ic_header"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:layout_collapseMode="pin"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
